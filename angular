@@ -1,0 +1,86 @@
+1. Getting started.
+
+Angular is a framework for building client application in html,css, JavaScript/typescript.
+Angular is written in typescript
+Angular uses webpack which is build automation tool. It combines stylesheets and scripts puts them in a bundleWhy angular?
+As the application gets complex JavaScript code gets complex and difficult to maintain.
+Angular gives a clean structure
+Brings lots of users utility code
+Easily testableThe angular framework is not required but it makes life easier.
+Setting up the development environment
+- node is runtime environment for executing Java code outside the browser.
+- node provides took we need to build angular projects.
+- minimum version to require angular applications is 6.9
+- npm is used to install 3rd party libraries
+Libraries required. - angular CLI- ng new hello-world
+- ng server - Structure of the projectE2e - contains end to end tests for application
+Node_modules - contains all 3rd party library. Only for development. Not deployed to a server 
+Src - actual source code
+ -app - it has a module and component. Each application will have at least one module and one component.
+Assests - store static assets (images,icons)
+Environment - configuration settings
+Index.html - simple html file
+Main.ts - starting point of application.
+All we do is Bootstrapping main module of application. So angular loads this module(AppModule) and everything starts from there.
+Polyfills.ts - imports scripts required for running angular. BecauSe angular uses some features of  JavaScript that are not available in current version of js supported by most version of browser. Fills gap between the features angular needs and features supported by current brower
+Styles.css - add  global styles for application
+Tests ts - setting for testing environment
+Angular-cli.json - pre standard conf. Don't need to worry
+Karma.conf.js - conf file for karma test runner
+Package.jsom - every node project has...determiines libraries that your application depends upon.
+Protractor - tools for running e2e tests
+Tsconfig.json- settings for typescript compiler.
+Tslinit.json - settings for tstlint.tool for 
+Static analysis tool for typescript tool.Angular cli uses a tool called webpack whch is build automation tool.it gets all the typescripts and styles, combines them and puts them in a bundle and then minifyies that bundle and this is for optimization.Hot module replacement
+- feature of we pack
+- one of the source is modified, we pack automatically refreshes your browser.
+- if you view the source , then you will see that bundles which webpack created are also injected into index.html
+Angular version history
+Angularjs vs angular2 vs angular4Js was introduced in 2010 for building client applications. Due to popularity angular team started adding new features to core but this framework was designed considering current needs and it was overly complex 
+So angular team rewrote everything and introduced angular2 in mid 2016.
+This is entirely different from prev version. Considered as new language.
+After few minor upgrades, then angular 4 came up.
+Angular had different libraries with different version. To keep them in sync, they directly introduced angular4 which is not very different from angular2.
+It just has additional features.
+Chapter 2 (Angular Fundamentals)
+Angular building block
+Components - encapsulates data, html markup, logic for the view which is the area of screen which user sees.
+Smaller unit which can be resulable
+Angular embraces component based architecture which allows  to build small and maintable pieces which can be they also be reused in diff places.
+Every angular application has atleast one component which is app component or root component
+Angular app is tree of component starting from app component or the root component
+Modules - container for group of related components. One module will always be there - app module . As app grows you may want to break that module into smaller and maintainable module.Creating component - 
+3 steps 
+1. Create a component
+2. Register it in a module
+3. Add an element in an html markup
+Naming convention
+- courses.compoment.ts
+- if multiple words separate using - 
+To convert a normal typescript class to component class we need to add some metadata which angular understands .
+There is a decorator called component which can be attached to a class to make it a component
+So import decorator on top
+Import { component } from '@angular/core'
+And apply to angular class Register in module 
+Go to app.module.ts, include it in declarations and import 3rd step 
+Anywhere we have an element courses angular is going to render template inside that element. But where we are going to add that element.  
+App.component.html - add that courses here  Approach 
+Tedious so many steps Creating using angular cli
+Ng g c componentName Component should not include logic other than presentation logic. 
+Directives  - to manipulate dom . To add dom element, delete existing adom element
+If u r using any directive which is modifying the structure  of dom, prefix it with *
+E.g ngFor
+Property binding - 
+We put a property in a square bracket and bind it to field or property in typescript class
+One way binding from component to dom
+If changehe in component , dom updated vice-versa.
+If you have input , and users type anything in the field then, component will not be updated.
+Use interpolation when adding text to headers,span, div.. Else interpolation.. It's just about syntax
+
+Attribute binding
+Dom is a model of objects that represents document. It is a hierarchy of objects in memory.
+HTML is a markup language for dom representation in text.
+There is one to one mapping between attributes of HTML and properties of dom except for few.
+E.g colSpan attribute of HTML has no property  representation in dom. And textContent in Dom has no representation in HTMLAdding bootstrap - bootstrap is a css library that gives your application modern look and feel.Two way binding 
+Use banana in box syntax and bind the property to ngModel.
+Import forms module in app.module.ts else you will get and error.
